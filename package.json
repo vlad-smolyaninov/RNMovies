@@ -1,0 +1,38 @@
+{
+  "name": "renapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-router-flux": "^4.0.6",
+    "react-redux": "^7.1.0-alpha.4",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/runtime": "7.4.4",
+    "@types/jest": "24.0.12",
+    "@types/react": "16.8.17",
+    "@types/react-native": "0.57.53",
+    "@types/react-test-renderer": "16.8.1",
+    "@types/styled-components": "^4.1.14",
+    "babel-jest": "24.8.0",
+    "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.54.0",
+    "react-native-dotenv": "^0.2.0",
+    "react-test-renderer": "16.8.3",
+    "typescript": "3.4.5"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

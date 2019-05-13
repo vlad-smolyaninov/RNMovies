@@ -10,7 +10,7 @@
     "classnames": "^2.2.6",
     "react": "16.8.3",
     "react-native": "0.59.8",
-    "react-native-router-flux": "^4.0.6",
+    "react-navigation": "^3.9.1",
     "react-redux": "^7.1.0-alpha.4",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",

@@ -3,7 +3,7 @@ import {Image} from 'react-native'
 import {IMovie} from "../interface";
 import {MovieBlock, Overview, Title} from "../styled";
 
-export default ({movie}: IMovie) => (
+const Movie: React.FC<IMovie> = ({movie}) => (
   <MovieBlock>
     <Image
       style={{width: 500, height: 150}}
@@ -13,4 +13,6 @@ export default ({movie}: IMovie) => (
     <Overview>{movie.overview}</Overview>
   </MovieBlock>
 )
+
+export default Movie
 

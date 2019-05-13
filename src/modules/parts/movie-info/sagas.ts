@@ -2,11 +2,10 @@ import {call, put, putResolve, takeLatest} from 'redux-saga/effects'
 import {getMovie, getMovieFailure, getMovieStart, getMovieSuccess} from './actions'
 import Api from '../../../services/api/Api'
 
-function* fetchMovie() {
+function* fetchMovie({payload: {search}} : { payload: {search: string}}) {
   try {
     yield putResolve(getMovieStart())
-    const movieName = 'The'
-    const result = yield call([Api, Api.get], {url: 'fetchMovieByName', movieName})
+    const result = yield call([Api, Api.get], {url: 'fetchMovieByName', search})
 
 
     yield put(getMovieSuccess(result))

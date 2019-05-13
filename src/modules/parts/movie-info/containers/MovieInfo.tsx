@@ -1,22 +1,26 @@
-import withHooks from '../../../../utils/withHooks';
+import withHooks from '../../../../utils/withHooks'
 // @ts-ignore
 import {useDispatch, useSelector} from 'react-redux'
-import {useEffect} from "react"
+import {useEffect, useState} from "react"
 import {getMovie} from "../actions"
-import MoviesList from '../components/MoviesList';
+import MoviesList from '../components/MoviesList'
 
 
 export default withHooks(() => {
-    const dispatch = useDispatch()
-    const movies = useSelector((state: any) => state.movieInfoReducer.movies)
+  const dispatch = useDispatch()
+  const movies = useSelector((state: any) => state.movieInfoReducer.movies)
 
-    useEffect(() => {
-      dispatch(getMovie())
-    }, [])
+  const [search, setSearch] = useState('')
 
-    return {
-      movies: movies.results || []
-    }
+  const onSearch = () => {
+    dispatch(getMovie({search}))
   }
-)(MoviesList)
+
+  return {
+    search,
+    setSearch,
+    onSearch,
+    movies: movies.results || []
+  }
+})(MoviesList)
 

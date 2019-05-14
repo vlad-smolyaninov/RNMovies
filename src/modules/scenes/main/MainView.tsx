@@ -1,13 +1,11 @@
 import React from "react"
-import {Text, View} from "react-native"
 import Layout from "../../layout/Layout"
-import MovieInfo from "../../parts/movie-info/containers/MovieInfo";
+import MovieList from "../../parts/movie-info/containers/MoviesList"
 
-export default () => {
+const MainView: React.FC = () => (
+  <Layout>
+    <MovieList/>
+  </Layout>
+)
 
-  return (
-    <Layout>
-      <MovieInfo/>
-    </Layout>
-  )
-}
+export default MainView;

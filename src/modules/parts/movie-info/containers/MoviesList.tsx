@@ -1,7 +1,7 @@
 import withHooks from '../../../../utils/withHooks'
 // @ts-ignore
 import {useDispatch, useSelector} from 'react-redux'
-import {useEffect, useState} from "react"
+import {useState} from "react"
 import {getMovie} from "../actions"
 import MoviesList from '../components/MoviesList'
 

@@ -1,12 +1,12 @@
 export function createAction(
   name: string,
   payloadMapper: any = false
-): string | Function {
+): any {
   // @ts-ignore
   const scopedName = this.scope ? `${this.scope}/` : ''
   const type = `@@app/${scopedName}${name}`
 
-  function actionCreator(...args: any[]) {
+  function actionCreator(...args: any[]): object {
 
     const {meta, payload, restFields} = payloadMapper
       ? payloadMapper(...args)
@@ -21,7 +21,7 @@ export function createAction(
     }
   }
 
-  actionCreator.toString = () => `${type}`
+  actionCreator.toString = (): string => `${type}`
   actionCreator.bind({displayName: type})
 
   return actionCreator

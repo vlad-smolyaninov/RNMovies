@@ -1,15 +1,21 @@
 import styled from "styled-components"
 import {Image, Text, View} from "react-native"
 
-export const Header = styled(View)`
+
+export const LayoutWrapper = styled(View)`
+  height: 100%;
+  display: flex;
+`
+
+export const HeaderWrapper = styled(View)`
   z-index: 100;
   background: ${(p) => p.theme.color.main};
   height: 50px;
   
-  elevation: 10;
+  elevation: 5;
   shadow-color: #000;
-  shadow-offset: 10px 10px;
-  shadow-opacity: 1;
+  shadow-offset: 0px 10px;
+  shadow-opacity: 0.4;
   shadow-radius: 2px;
   display: flex;
   flex-direction: row;
@@ -29,3 +35,22 @@ export const Logo = styled(Image)`
   height: 40px;
   margin-right: 20px;
 `
+
+export const ContentWrapper = styled(View)`
+   flex-grow: 1;
+`
+
+export const FooterWrapper = styled(View)`
+  background: ${(p) => p.theme.color.main};
+  height: 50px;
+  flex-direction: row;
+`
+
+
+export const FooterTab = styled(View)`
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`
+

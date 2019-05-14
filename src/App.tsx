@@ -7,7 +7,7 @@ import Router from "./modules/router/Router"
 
 
 export default () => {
-  let store = configureStore({}, {})
+  let store = configureStore()
 
   return (
     <ThemeProvider theme={theme}>

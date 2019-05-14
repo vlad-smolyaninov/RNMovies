@@ -1,9 +1,20 @@
-import withHooks from "../../utils/withHooks"
-import LayoutView from './LayoutView'
+import React, {ReactNode} from "react"
+import {ContentWrapper, LayoutWrapper} from "./styled"
+import Footer from "./Footer"
+import Header from "./Header"
 
+export interface ILayout {
+  children: ReactNode
+}
 
-export default withHooks(() => {
+const Layout: React.FC<ILayout> = ({children}) => (
+  <LayoutWrapper>
+    <Header/>
+    <ContentWrapper>
+      {children}
+    </ContentWrapper>
+    <Footer/>
+  </LayoutWrapper>
+)
 
-
-})(LayoutView)
-
+export default Layout

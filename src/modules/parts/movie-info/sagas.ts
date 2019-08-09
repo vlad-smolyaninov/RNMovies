@@ -7,7 +7,6 @@ function* fetchMovie({payload: {search}} : { payload: {search: string}}) {
     yield putResolve(getMovieStart())
     const result = yield call([Api, Api.get], {url: 'fetchMovieByName', search})
 
-
     yield put(getMovieSuccess(result))
   } catch (err) {
     yield put(getMovieFailure(err))

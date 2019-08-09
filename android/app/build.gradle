@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle
 
 import com.android.build.OutputFile
 
@@ -73,7 +74,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.ts"
+    entryFile: "index.js"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -138,6 +139,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-config')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

@@ -1,11 +1,7 @@
-import React from "react"
-import {Button, NativeSyntheticEvent, NativeTouchEvent, TextInput} from 'react-native'
+import React from 'react'
+import {Button, TextInput} from 'react-native'
+import {ISearchInput} from '../types'
 
-export interface ISearchInput {
-  search: string,
-  setSearch: (val: string) => void,
-  onSearch: (ev: NativeSyntheticEvent<NativeTouchEvent>) => void,
-}
 
 const SearchInput: React.FC<ISearchInput> = ({search, setSearch, onSearch}) => (
   <>

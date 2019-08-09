@@ -1,16 +1,16 @@
 import Endpoints from './Endpoints'
-import * as Env from 'react-native-dotenv'
+import Config from 'react-native-config'
 
 interface IUrlData {
-  uri: string,
+  url: string,
   [key: string]: any,
 }
 
 export default class ApiService {
 
-  static _hosts: object = {
+  static _hosts: any = {
     TMDBHost: 'https://api.themoviedb.org',
-    TMDBApiKey: Env.TMDB_API_KEY
+    TMDBApiKey: Config.TMDB_API_KEY
   }
 
   static _endpoints: {
@@ -43,6 +43,7 @@ export default class ApiService {
   }
 
   static get(urlData: IUrlData) {
+    console.log(Config)
     return this._request(urlData, 'GET')
   }
 
